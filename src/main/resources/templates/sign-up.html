@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/form-stylesheet.css}">
+    <title>Sign up</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Javagram</h2>
+        <form method="post" th:object="${user}" th:action="@{/submitItem}">
+            <input type="text" placeholder="First Name" th:field="*{firstName}">
+            <p class="txt-errors" th:errors="*{firstName}"></p>
+            <input type="text" placeholder="Last Name" th:field="*{lastName}">
+            <p class="txt-errors" th:errors="*{lastName}"></p>
+            <input type="text" placeholder="Username" th:field="*{userName}">
+            <p class="txt-errors" th:errors="*{userName}"></p>
+            <input type="text" placeholder="Email" th:field="*{email}">
+            <p class="txt-errors" th:errors="*{email}"></p>
+            <p>Date of Birth</p>
+            <input type="date" th:field="*{dateOfBirth}">
+            <p class="txt-errors" th:errors="*{dateOfBirth}"></p>
+            <br>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+
+</html>
